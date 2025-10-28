@@ -1,6 +1,11 @@
 # CinephoriaExe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6. , Electron 39.0.0, electron-builder 26.0.12
+
+## Environment
+
+This project was built on MacbookAir. 
+To generate the exe on Window, run the command " npx electron-builder --win portable "
 
 ## Development server
 
