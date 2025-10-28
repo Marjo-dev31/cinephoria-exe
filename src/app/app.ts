@@ -4,7 +4,9 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  template: ` <main class="h-full text-darkblue" id="bgImg"><router-outlet /></main>`,
+  template: ` <main class="h-full text-darkblue bg-seasalt " id="bgImg">
+    <router-outlet />
+  </main>`,
   styles: `
     #bgImg {
       background: center / contain url('/8620.jpg');

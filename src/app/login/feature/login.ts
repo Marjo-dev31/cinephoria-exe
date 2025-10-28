@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormComponent } from '../../shared/ui/form/form.component';
 import { UserService } from '../../shared/services/user.service';
 import { LoginCredantialInterface } from '../models/user.interface';
-import { DynamicControl } from '../../shared/ui/form/form.interface';
+import { DynamicControl } from '../../shared/models/form.interface';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +25,7 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           if (response) {
-            this.router.navigate(['intranet']);
+            this.router.navigate(['intranet/declarerIncident']);
           }
         },
         error: (err) => this.errorMessage.set(err.message),

@@ -9,13 +9,13 @@ import { UserService } from '../../services/user.service';
   template: `
     <div class="italic p-4 capitalize font-monserrat w-72 bg-sage h-full absolute ">
       <h2 class="text-center mt-48">Bienvenue {{ currentUserName() }}</h2>
-      <div class="flex flex-col justify-between items-end mt-36">
+      <div class="flex flex-col justify-between items-end mt-28">
         <ul>
           <li class="p-4">
-            <a [routerLink]="['/intranet/suivreIncidents']">Déclarer un sinistre</a>
+            <a [routerLink]="['/intranet/declarerIncidents']">Déclarer un sinistre</a>
           </li>
           <li class="p-4 text-end">
-            <a [routerLink]="['/intranet/declarerIncident']" class="">Suivre un sinistre</a>
+            <a [routerLink]="['/intranet/suivreIncident']" class="">Suivre un sinistre</a>
           </li>
         </ul>
         <button (click)="logout()" class="flex absolute bottom-0 p-4">
