@@ -13,8 +13,10 @@ function createWindow() {
         height: 600,
         webPreferences: {
             contextIsolation: true,
+            nodeIntegration: true
         }
     });
+
     win.loadFile(path.join(__dirname, '../dist/cinephoria-exe/browser/index.html'));
 }
 // App Lifecycle

@@ -10,8 +10,8 @@ export const routes: Routes = [
     path: 'intranet',
     component: Intranet,
     children: [
-      { path: 'suivreIncidents', component: TrackClaims },
       { path: 'declarerIncident', component: ReportClaim },
+      { path: 'suivreIncidents', component: TrackClaims },
     ],
   },
 ];
