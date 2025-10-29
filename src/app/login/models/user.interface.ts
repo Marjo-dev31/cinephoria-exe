@@ -6,6 +6,11 @@ export interface LoginCredantialInterface {
 export interface CurrentUserInterface {
   id: string;
   username: string;
-  role: string;
+  role: RoleInterface;
   access_token: string;
+}
+
+export interface RoleInterface {
+  id: string;
+  name: string;
 }

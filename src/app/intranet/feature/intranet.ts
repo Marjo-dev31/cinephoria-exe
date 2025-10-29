@@ -15,7 +15,7 @@ export class Intranet {
     initialValue: {
       id: '',
       username: '',
-      role: '',
+      role: { id: '', name: '' },
       access_token: '',
     },
   });

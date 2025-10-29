@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -18,7 +18,7 @@ import { UserService } from '../../services/user.service';
             <a [routerLink]="['/intranet/suivreIncidents']" class="">Suivre un sinistre</a>
           </li>
         </ul>
-        <button (click)="logout()" class="flex absolute bottom-0 p-4">
+        <button (click)="logout()" class="flex absolute bottom-0 p-4 cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -41,9 +41,12 @@ import { UserService } from '../../services/user.service';
 })
 export class SidebarComponent {
   private readonly userService = inject(UserService);
+  private readonly router = inject(Router);
+
   currentUserName = input<string>('');
 
   logout() {
     this.userService.logout();
+    this.router.navigate(['/']);
   }
 }

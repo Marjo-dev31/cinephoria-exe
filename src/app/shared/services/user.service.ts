@@ -14,7 +14,7 @@ export class UserService {
   currentUser = new BehaviorSubject<CurrentUserInterface>({
     id: '',
     username: '',
-    role: '',
+    role: { id: '', name: '' },
     access_token: '',
   });
 
@@ -42,7 +42,7 @@ export class UserService {
     this.currentUser.next({
       id: '',
       username: '',
-      role: '',
+      role: { id: '', name: '' },
       access_token: '',
     });
     this.access_token.next('');

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: '',
+  serverUrl: 'https://d29qqvaob7rvyi.cloudfront.net',
 };

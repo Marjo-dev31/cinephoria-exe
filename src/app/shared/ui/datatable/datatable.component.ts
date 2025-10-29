@@ -1,4 +1,4 @@
-import { Component, computed, effect, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ColumnInterface } from '../../models/column.interface';
 import { IncidentInterface } from '../../../intranet/models/incident.interface';
@@ -14,6 +14,4 @@ export class DatatableComponent {
 
   // dataSource = computed(() => this.data());
   columnKeys = computed(() => [...this.displayColumns().map((column) => column.key)]);
-
-  efect = effect(() => console.log(this.data(), this.displayColumns()));
 }

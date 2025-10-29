@@ -7,7 +7,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 This project was built on MacbookAir. 
 To generate the exe on Window, run the command " npx electron-builder --win portable "
 
-## Development server
+## Development server on Angular environment
 
 To start a local development server, run:
 
@@ -16,6 +16,26 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Development server on Eletron environment
+
+To start an Electron local environment run : 
+```bash
+ng serve
+npm run electron
+```
+
+## To access to executable file
+
+On MacOs:
+
+Run : 
+```bash
+ng serve
+npm run package
+```
+On your cinephoria-exe folder -> dist -> CinephoriaExe-0.0.0-arm64.dmg
+And install app as usual
 
 ## Code scaffolding
 

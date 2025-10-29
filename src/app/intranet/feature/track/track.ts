@@ -1,8 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { IncidentService } from '../../../shared/services/incident.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { DatatableComponent } from '../../../shared/ui/datatable/datatable.component';
 import { IncidentInterface } from '../../models/incident.interface';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-track',
@@ -10,7 +10,7 @@ import { IncidentInterface } from '../../models/incident.interface';
   template: `
     <div class="pt-40 ml-72 flex flex-col items-center">
       <h1 class="font-roboto text-6xl text-center my-6 border-2 bg-seasalt p-2 rounded-lg">
-        Déclarer les incidents
+        Suivre les incidents
       </h1>
       <app-datatable
         [displayColumns]="displayColumns()"
