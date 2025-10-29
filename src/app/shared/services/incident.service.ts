@@ -15,6 +15,10 @@ export class IncidentService {
     return this.http.get<IncidentInterface[]>(this.url);
   }
 
+  // async getAllIncidents(): Promise<IncidentInterface[]> {
+  //   return await window.electronAPI.getAllIncidents();
+  // }
+
   createIncident(newIncident: Omit<IncidentInterface, 'id'>): Observable<IncidentInterface> {
     return this.http.post<IncidentInterface>(this.url, newIncident);
   }

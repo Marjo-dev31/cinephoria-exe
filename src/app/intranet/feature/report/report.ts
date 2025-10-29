@@ -20,6 +20,12 @@ import { RoomInterface } from '../../../shared/models/room.interface';
       (outputForm)="addIncident($event)"
       class=" rounded-lg w-96 border-2 border-darkblue bg-seasalt"
     />
+    @if (isIncidentSent()) {
+      <p class="text-red-600 pt-2">Incident enregistré</p>
+    }
+    @if (isIncidentOnError()) {
+      <p class="text-red-600 pt-2">Une erreur s'est produite, veuillez ré-essayer plus tard.</p>
+    }
   </div>`,
 })
 export class ReportClaim implements OnInit {
@@ -28,6 +34,8 @@ export class ReportClaim implements OnInit {
   private readonly destroyRef = inject(DestroyRef);
   formModelConfig: DynamicControl[] = [];
   rooms = signal<RoomInterface[]>([]);
+  isIncidentSent = signal<boolean>(false);
+  isIncidentOnError = signal<boolean>(false);
 
   addIncident(incident: IncidentFormInterface) {
     const incidentAtRoom = +incident.room.split(' ')[1];
@@ -44,7 +52,13 @@ export class ReportClaim implements OnInit {
       this.incidentService
         .createIncident(newIncident)
         .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe();
+        .subscribe((response) => {
+          if (response) {
+            this.isIncidentSent.set(true);
+          } else {
+            this.isIncidentOnError.set(true);
+          }
+        });
     }
   }
 

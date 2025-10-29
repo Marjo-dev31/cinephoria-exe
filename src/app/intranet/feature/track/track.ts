@@ -1,8 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { IncidentService } from '../../../shared/services/incident.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { DatatableComponent } from '../../../shared/ui/datatable/datatable.component';
 import { IncidentInterface } from '../../models/incident.interface';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-track',
