@@ -12,10 +12,10 @@ import { UserService } from '../../services/user.service';
       <div class="flex flex-col justify-between items-end mt-28">
         <ul>
           <li class="p-4">
-            <a [routerLink]="['/intranet/declarerIncidents']">Déclarer un sinistre</a>
+            <a [routerLink]="['/intranet/declarerIncident']">Déclarer un sinistre</a>
           </li>
           <li class="p-4 text-end">
-            <a [routerLink]="['/intranet/suivreIncident']" class="">Suivre un sinistre</a>
+            <a [routerLink]="['/intranet/suivreIncidents']" class="">Suivre un sinistre</a>
           </li>
         </ul>
         <button (click)="logout()" class="flex absolute bottom-0 p-4">
