@@ -1,12 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  template: ` <main class="h-full text-darkblue bg-seasalt " id="bgImg">
+    <router-outlet />
+  </main>`,
+  styles: `
+    #bgImg {
+      background: center / contain url('/8620.jpg');
+    }
+  `,
 })
-export class App {
-  protected readonly title = signal('cinephoria-exe');
+export class AppComponent {
+  title = 'cinephoria-exe';
 }

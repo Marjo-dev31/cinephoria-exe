@@ -1,0 +1,24 @@
+<div class="flex flex-col justify-center items-center m-auto w-1/2 h-full" id="bgImg">
+  <div class="bg-darkblue text-peach text-4xl p-4 text-center my-10">
+    <h2>Intranet Cinéphoria de déclaration et suivi des incidents</h2>
+  </div>
+  <div class="bg-darkblue flex min-h-96">
+    <div class="w-1/2 flex flex-col items-center justify-evenly border-r-2 border-r-peach ">
+      <h3 class="text-center text-2xl font-bold font-roboto p-2 capitalize rounded-lg bg-seasalt w-2/3">
+        se connecter
+      </h3>
+      @if (errorMessage()) {
+        <p class="text-red-600 text-center">{{ errorMessage() }}</p>
+      }
+      <app-form
+        [formModelConfig]="formModelConfig"
+        (outputForm)="handleLogin($event)"
+        class="text-peach w-full"
+      >
+      </app-form>
+    </div>
+    <div class="w-1/2 flex justify-center items-center">
+      <img src="/logo.png" alt="logo de Cinéphoria" class="rounded-full w-2/3">
+    </div>
+  </div>
+</div>

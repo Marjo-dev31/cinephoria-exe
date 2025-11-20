@@ -1,0 +1,26 @@
+<section class="border-collapse overflow-x-auto min-w-full">
+  <cdk-table [dataSource]="data()" class="min-w-full">
+    @for (column of displayColumns(); track column.key) {
+      <ng-container [cdkColumnDef]="column.key" class="flex flex-col">
+        <cdk-header-cell *cdkHeaderCellDef class="flex-1 p-2 text-center font-semibold capitalize">
+          {{ column.label }}
+        </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="flex-1 p-2 text-center">
+          {{ column.accessor(row) }}
+        </cdk-cell>
+      </ng-container>
+    }
+
+    <cdk-header-row
+      *cdkHeaderRowDef="columnKeys()"
+      class="flex bg-sage/30 border border-darkblue min-w-fit"
+    ></cdk-header-row>
+    <cdk-row
+      *cdkRowDef="let row; columns: columnKeys()"
+      class="flex border border-darkblue min-w-fit"
+    ></cdk-row>
+  </cdk-table>
+  @if (!data().length) {
+    <p class="text-center p-4 font-semibold">Aucun enregistrement</p>
+  }
+</section>
